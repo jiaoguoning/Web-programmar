@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.top{
+			height: 30px;
+			background-color: #ccc;
+
+		}
+		.text{
+			color: red;
+		}
+		.top-left{
+			height: 20px;
+			width: 20px;
+			line-height: 30px;
+			margin-left: 200px;
+			margin-bottom: 5px;
+			display: inline-block;
+		}
+		.top-right{
+			width: 900px;
+			position: absolute;
+			left: 400px;
+			overflow: hidden;
+		}
+	</style>
+	<script type="text/javascript" src="js/animate.js"></script>
+</head>
+<body>
+	<div class="top">
+		<img src="images/a15.png" class="top-left">
+		<div class="top-right">
+			<p class="text" id="text">【温馨提示】 最近有不少不法分子在网上骗人，请大家注意！！！</p>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var text = document.getElementById('text');
+		window.onload=function(){
+				var timer = setInterval(function(){
+					var now = parseInt(getStyle(text,'left'));
+					if(now == 500){
+						clearInterval(timer);
+					}else{
+						text.style.left = now + 20 +'px';
+					}
+				},30)
+				
+		};
+		
+	</script>
+</body>
+</html>
